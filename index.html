@@ -3,236 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>عالم التكنولوجيا | أحدث الجوالات</title>
+    <title>عالم التكنولوجيا الحديثة</title>
+  <meta property="og:title" content="عالم التكنولوجيا الحديثة">
+<meta property="og:description" content="أحدث الجوالات العالمية بضمان وجودة بأفضل الأسعار.">
+<meta property="og:image" content="https://raw.githubusercontent.com/baderaid51-max/store/d9b14a84850ee629b4b59b86662fa3491e6d01be/tinywow_1000215642_91133632.png">
+<meta property="og:image:secure_url" content="https://raw.githubusercontent.com/baderaid51-max/store/d9b14a84850ee629b4b59b86662fa3491e6d01be/tinywow_1000215642_91133632.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:url" content="https://world-of-modern-technology.netlify.app/">
+<meta property="og:type" content="website">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
-        :root {
-            --main-blue: #0066ff;
-            --dark-blue: #0044aa;
-            --body-bg: #f8f9fa;
-        }
+        :root { --main-blue: #0066ff; --body-bg: #f8f9fa; }
+        body { background-color: var(--body-bg); font-family: 'Cairo', sans-serif; display: flex; flex-direction: column; min-height: 100vh; margin: 0; }
+        .main-content { flex: 1; }
+        
+        .top-nav { background-color: var(--main-blue); padding: 12px 15px; display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 1050; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .search-bar { background: white; border-radius: 10px; display: flex; align-items: center; padding: 5px 12px; flex-grow: 1; }
+        .search-bar input { border: none; outline: none; width: 100%; font-size: 0.85rem; }
 
-        body {
-            background-color: var(--body-bg);
-            font-family: 'Cairo', sans-serif;
-            margin-bottom: 80px;
-        }
+        .promo-banner { background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%); border-radius: 15px; margin: 15px; padding: 20px; display: flex; align-items: center; border: 1px solid #eee; }
+        .promo-text h2 { font-size: 1.4rem; font-weight: 800; color: #222; }
 
-        /* الهيدر المطور */
-        .hero-header {
-            background: linear-gradient(135deg, var(--main-blue), var(--dark-blue));
-            padding: 40px 20px 30px;
-            text-align: center;
-            color: white;
-            border-radius: 0 0 40px 40px;
-            position: relative;
-            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.1);
-        }
+        /* تصميم شريط الإعلانات المتحرك */
+        .ads-carousel-wrapper { margin: 0 15px 20px 15px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: white; border: 1px solid #eee; }
+        .ad-item { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; min-height: 110px; }
+        .ad-text { font-size: 1.1rem; font-weight: 800; color: #d3181e; flex-grow: 1; margin-left: 15px; line-height: 1.4; }
+        .ad-img { width: 90px; height: 90px; object-fit: contain; }
 
-        .shop-name {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
+        .quick-nav { background: white; border-radius: 15px; margin: 0 15px 20px 15px; padding: 15px 10px; display: flex; justify-content: space-around; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .quick-nav .nav-item { text-align: center; color: #555; text-decoration: none; font-size: 0.85rem; font-weight: 700; flex: 1; transition: 0.2s; }
+        .quick-nav .nav-item i { font-size: 1.5rem; display: block; margin-bottom: 6px; color: var(--main-blue); }
+        
+        .phone-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 15px 25px 15px; }
+        .phone-card { background: white; border-radius: 15px; padding: 15px 10px; border: 1px solid #f0f0f0; text-align: center; position: relative; transition: 0.2s; cursor: pointer; }
+        .phone-card img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 12px; }
+        .phone-card h6 { font-size: 0.85rem; font-weight: 700; height: 38px; overflow: hidden; margin-bottom: 8px; color: #333; }
+        .price-tag { color: var(--main-blue); font-weight: 900; font-size: 1.1rem; display: block; }
+        .yemen-price { color: #198754; font-size: 0.85rem; font-weight: 700; display: block; margin-top: 2px; }
+        .share-btn-top { position: absolute; top: 8px; left: 8px; background: rgba(255,255,255,0.9); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; z-index: 5; }
 
-        .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 2px;
-            opacity: 0.9;
-        }
+        .spec-row { display: flex; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .spec-icon { background-color: #d3181e; color: white; width: 55px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+        .spec-text { background-color: #1a569d; color: white; flex-grow: 1; padding: 10px 15px; text-align: right; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; }
 
-        .hero-desc {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-bottom: 25px;
-        }
+        .site-footer { background-color: #222; color: #fff; text-align: center; padding: 20px 15px; margin-top: 30px; border-top: 4px solid var(--main-blue); }
+        .site-footer p { margin: 0; line-height: 1.8; }
+        .site-footer .phones { font-size: 1.1rem; font-weight: 700; direction: ltr; display: inline-block; }
+        .site-footer .phones a { color: #ffc107; text-decoration: none; transition: 0.2s; }
 
-        /* شريط البحث */
-        .search-wrapper {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .search-bar {
-            background: white;
-            border-radius: 15px;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .search-bar input {
-            border: none;
-            outline: none;
-            width: 100%;
-            margin-right: 10px;
-            font-size: 0.95rem;
-        }
-
-        .search-bar i { color: var(--main-blue); }
-
-        /* بنر العروض */
-        .promo-banner {
-            background: #fff;
-            border-radius: 20px;
-            margin: 20px 15px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            border: 1px solid #edf2f7;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .promo-banner:active { transform: scale(0.98); }
-
-        .promo-text h2 { font-size: 1.3rem; font-weight: 800; }
-        .promo-text p { font-size: 0.85rem; color: #666; }
-
-        /* شبكة المنتجات */
-        .phone-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 0 15px;
-        }
-
-        .phone-card {
-            background: white;
-            border-radius: 18px;
-            padding: 12px;
-            border: 1px solid #f0f0f0;
-            text-align: center;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .phone-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-
-        .phone-card h6 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 8px;
-            height: 40px;
-            overflow: hidden;
-        }
-
-        .price-tag {
-            color: var(--main-blue);
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-
-        .share-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #f8f9fa;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.8rem;
-        }
-
-        /* القائمة السفلية */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 0;
-            border-top: 1px solid #eee;
-            z-index: 1050;
-        }
-
-        .nav-item {
-            text-align: center;
-            color: #888;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .nav-item.active { color: var(--main-blue); }
-        .nav-item i { font-size: 1.3rem; display: block; margin-bottom: 2px; }
-
-        @media (min-width: 992px) {
-            .phone-grid { grid-template-columns: repeat(4, 1fr); }
-            .bottom-nav { display: none; }
-        }
+        @media (min-width: 992px) { .phone-grid { grid-template-columns: repeat(4, 1fr); } .promo-banner { padding: 40px; } }
     </style>
 </head>
 <body>
 
-<header class="hero-header">
-    <div class="shop-name">عالم التكنولوجيا</div>
-    <div class="hero-subtitle">أحدث الجوالات العالمية</div>
-    <div class="hero-desc">كل ما تحتاجه في عالم التكنولوجيا بين يديك</div>
-    
-    <div class="search-wrapper">
+<div class="main-content">
+    <nav class="top-nav">
+        <button class="btn p-0 border-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
         <div class="search-bar">
-            <i class="fas fa-search"></i>
-            <input type="text" id="phoneSearch" placeholder="ابحث عن اسم الجوال..." onkeyup="searchPhones()">
+            <i class="fas fa-search text-muted"></i>
+            <input type="text" id="phoneSearch" placeholder="ابحث عن جوال..." onkeyup="searchPhones()">
+        </div>
+        <div class="text-white"><i class="fas fa-user-circle fa-lg"></i></div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" style="width: 280px;">
+        <div class="offcanvas-header bg-primary text-white">
+            <h5 class="offcanvas-title">الأقسام والشركات</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        
+        <div class="p-3 bg-light border-bottom">
+            <label class="form-label fw-bold small text-muted"><i class="fas fa-wallet"></i> ابحث حسب الميزانية</label>
+            <div class="input-group">
+                <input type="number" id="budgetInput" class="form-control" placeholder="أقصى سعر (ريال يمني)">
+                <button class="btn btn-primary" onclick="searchByBudget()">بحث</button>
+            </div>
+        </div>
+
+        <div class="offcanvas-body p-0" id="brandListMobile">
+            <a href="#" class="list-group-item list-group-item-action p-3 fw-bold" onclick="filterData('all')" data-bs-dismiss="offcanvas">🏠 الرئيسية (الكل)</a>
+            <a href="#" class="list-group-item list-group-item-action p-3 fw-bold text-danger" onclick="filterData('عروض')" data-bs-dismiss="offcanvas">🔥 أقوى العروض</a>
+            <div class="bg-light p-2 small fw-bold text-muted">تصفح حسب الماركة</div>
         </div>
     </div>
-</header>
 
-<div class="promo-banner" onclick="filterData('عروض')">
-    <div class="promo-text flex-grow-1">
-        <h2>عروض خاصة <i class="fas fa-fire text-danger"></i></h2>
-        <p class="mb-2">توفير كبير على أفضل الأجهزة العالمية</p>
-        <button class="btn btn-primary btn-sm rounded-pill px-4 fw-bold">اكتشف المزيد</button>
-    </div>
+    <div class="promo-banner">
+        <div class="promo-text flex-grow-1">
+            <h2> عالم التكنولوجيا الحديثة </h2>
+            <p class="text-muted">أحدث الجوالات العالمية بضمان وجودة</p>
+            <button class="btn btn-primary btn-sm rounded-pill px-4" onclick="filterData('عروض')">تسوق العروض</button>
+        </div>
     <div class="promo-img">
-        <img src="https://www.apple.com/v/iphone/home/bu/images/overview/select/iphone_15_pro__dqdbbb8acyue_large.png" width="90">
+    <img
+        src="https://raw.githubusercontent.com/baderaid51-max/store/d9b14a84850ee629b4b59b86662fa3491e6d01be/tinywow_1000215642_91133632.png"
+        alt="عالم التكنولوجيا الحديثة"
+        style="max-width:220px; width:100%; height:auto;">
+</div>
     </div>
-</div>
 
-<div id="loading" class="text-center py-5">
-    <div class="spinner-border text-primary"></div>
-    <p class="mt-2 text-muted">جاري تحميل أحدث المنتجات...</p>
-</div>
-
-<div id="productGrid" class="phone-grid"></div>
-
-<div class="bottom-nav">
-    <a href="#" class="nav-item active" onclick="location.reload()"><i class="fas fa-home"></i>الرئيسية</a>
-    <a href="#" class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#brandMenu"><i class="fas fa-th-large"></i>الفئات</a>
-    <a href="https://wa.me/967770418837" class="nav-item"><i class="fab fa-whatsapp"></i>واتساب</a>
-    <a href="#" class="nav-item" onclick="filterData('عروض')"><i class="fas fa-fire text-danger"></i>العروض</a>
-</div>
-
-<div class="offcanvas offcanvas-start" id="brandMenu" style="width: 280px;">
-    <div class="offcanvas-header bg-primary text-white">
-        <h5 class="offcanvas-title">تصفح حسب الماركة</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    <!-- شريط الإعلانات المتحرك (تم وضعه تحت تسوق العروض) -->
+    <div id="adsCarouselContainer" class="ads-carousel-wrapper" style="display: none;">
+        <div id="mainAdsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner" id="carouselInnerContent">
+                <!-- سيتم حقن الإعلانات هنا برمجياً -->
+            </div>
+            <!-- أزرار التنقل يمين ويسار للإعلانات -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainAdsCarousel" data-bs-slide="prev" style="width: 5%;">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainAdsCarousel" data-bs-slide="next" style="width: 5%;">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+            </button>
+        </div>
     </div>
-    <div class="offcanvas-body p-0" id="brandList">
-        <a href="#" class="list-group-item p-3 border-bottom d-block text-dark text-decoration-none fw-bold" onclick="filterData('all')" data-bs-dismiss="offcanvas">الكل</a>
+
+    <div class="quick-nav">
+        <a href="#" class="nav-item" onclick="filterData('all')"><i class="fas fa-home"></i>الرئيسية</a>
+        <a href="#" class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"><i class="fas fa-th-large"></i>الفئات</a>
+        <a href="https://wa.me/967770418837" class="nav-item"><i class="fab fa-whatsapp"></i>طلب خاص</a>
+        <a href="#" class="nav-item" onclick="location.reload()"><i class="fas fa-sync"></i>تحديث</a>
     </div>
+
+    <div id="loading" class="text-center py-5"><div class="spinner-border text-primary"></div></div>
+    
+    <!-- شبكة الجوالات فقط (تم فصل الإعلانات عنها) -->
+    <div id="productGrid" class="phone-grid"></div>
 </div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="mb-2"><i class="fas fa-phone-alt me-2"></i>اتصل بنا: 
+            <span class="phones">
+                <a href="tel:770418837">770418837</a> - <a href="tel:738621616">738621616</a>
+            </span>
+        </p>
+        <p class="small text-white-50">جميع الحقوق محفوظة &copy; م/ احمد بدر 2026</p>
+    </div>
+</footer>
 
 <div class="modal fade" id="detailModal" tabindex="-1">
-    <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
-        <div class="modal-content" id="modalBody" style="border-radius: 25px 25px 0 0;"></div>
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down modal-dialog-centered">
+        <div class="modal-content" id="modalBody" style="border-radius: 15px;"></div>
     </div>
 </div>
 
@@ -240,111 +156,200 @@
 <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpNHg2pQVD0H6oelvpdtKXZWVs7BYskMe6nre5OIxHCdhWlNBEHv1YykCzVZCmezwWzw/exec?data=true";
     let allProducts = [];
+    let detailModalInstance;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        detailModalInstance = new bootstrap.Modal(document.getElementById('detailModal'));
+        
+        window.addEventListener('popstate', function (event) {
+            const modalElement = document.getElementById('detailModal');
+            if (modalElement.classList.contains('show')) detailModalInstance.hide();
+        });
+
+        document.getElementById('detailModal').addEventListener('hidden.bs.modal', function () {
+            const url = new URL(window.location);
+            if(url.searchParams.has('id')) {
+                url.searchParams.delete('id');
+                window.history.replaceState({}, '', url.pathname);
+            }
+        });
+
+        loadData();
+    });
 
     async function loadData() {
         try {
             const res = await fetch(SCRIPT_URL);
-            allProducts = await res.json();
+            const data = await res.json();
+            
+            // الفلترة الذكية: فصل الإعلانات عن الجوالات
+            // الإعلانات هي التي يكون حقل الشركة فيها يحمل كلمة "إعلان"
+            const adsData = data.filter(p => (p.Brand === "إعلان" || p.brand === "إعلان"));
+            
+            // الجوالات هي الباقي، ويتم عكس ترتيبها للأحدث أولاً
+            allProducts = data.filter(p => (p.Brand !== "إعلان" && p.brand !== "إعلان")).reverse(); 
+            
+            renderAds(adsData);
             renderBrands();
             renderProducts(allProducts);
             document.getElementById('loading').style.display = 'none';
 
-            // تفعيل ميزة فتح المنتج من الرابط (Deep Link)
-            checkDeepLink();
-        } catch (e) {
-            document.getElementById('loading').innerHTML = "تعذر الاتصال بالبيانات";
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            if (productId) showDetails(productId);
+        } catch (e) { document.getElementById('loading').innerText = "خطأ في جلب البيانات"; }
+    }
+
+    // دالة عرض شريط الإعلانات المتحرك
+    function renderAds(ads) {
+        const container = document.getElementById('adsCarouselContainer');
+        const inner = document.getElementById('carouselInnerContent');
+        
+        if (!ads || ads.length === 0) {
+            container.style.display = 'none';
+            return;
         }
+
+        container.style.display = 'block';
+        inner.innerHTML = '';
+        
+        ads.forEach((ad, index) => {
+            const activeClass = index === 0 ? 'active' : '';
+            // النص محفوظ في Name والصورة في Image1
+            const adText = ad.Name || ad.name || 'إعلان';
+            const adImg = ad.Image1 || ad.img1 || '';
+            
+            inner.innerHTML += `
+                <div class="carousel-item ${activeClass}">
+                    <div class="ad-item">
+                        <div class="ad-text">${adText}</div>
+                        ${adImg ? `<img src="${adImg}" class="ad-img">` : ''}
+                    </div>
+                </div>
+            `;
+        });
     }
 
     function renderBrands() {
-        const brands = [...new Set(allProducts.map(p => p.Brand))];
-        const container = document.getElementById('brandList');
+        const brands = [...new Set(allProducts.map(p => p.Brand || p.brand).filter(b => b))];
+        const container = document.getElementById('brandListMobile');
         brands.forEach(b => {
-            if(b) container.innerHTML += `<a href="#" class="list-group-item p-3 border-bottom d-block text-dark text-decoration-none fw-600" onclick="filterData('${b}')" data-bs-dismiss="offcanvas">${b}</a>`;
+            container.innerHTML += `<a href="#" class="list-group-item list-group-item-action p-3 fw-bold" onclick="filterData('${b}')" data-bs-dismiss="offcanvas">📱 ${b}</a>`;
         });
     }
 
     function renderProducts(products) {
         const grid = document.getElementById('productGrid');
         grid.innerHTML = '';
+        if(products.length === 0) {
+            grid.innerHTML = '<div class="col-12 text-center text-muted py-4">لا توجد جوالات مطابقة لبحثك</div>';
+            return;
+        }
         products.forEach(p => {
+            const yemenPrice = (parseFloat(p.Price || p.price) * 540).toLocaleString();
             grid.innerHTML += `
-                <div class="phone-card" onclick="showDetails('${p.ID}')">
-                    <div class="share-btn" onclick="event.stopPropagation(); shareProduct('${p.ID}')">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                    <img src="${p.Image1 || 'https://via.placeholder.com/150'}">
-                    <h6>${p.Name}</h6>
-                    <span class="price-tag">$${p.Price}</span>
+                <div class="phone-card" onclick="showDetails('${p.ID || p.id}')">
+                    <div class="share-btn-top" onclick="event.stopPropagation(); shareProduct('${p.ID || p.id}')"><i class="fas fa-share-alt text-muted"></i></div>
+                    <img src="${p.Image1 || p.img1 || 'https://via.placeholder.com/150'}">
+                    <h6>${p.Name || p.name}</h6>
+                    <span class="price-tag">$${p.Price || p.price}</span>
+                    <span class="yemen-price">${yemenPrice} ريال</span>
                 </div>`;
         });
     }
 
     function filterData(brand) {
         let filtered = (brand === 'all') ? allProducts : 
-                       (brand === 'عروض') ? allProducts.filter(p => p.IsOffer === "نعم") : 
-                       allProducts.filter(p => p.Brand === brand);
+                       (brand === 'عروض') ? allProducts.filter(p => (p.IsOffer === "نعم" || p.isOffer === "نعم")) : 
+                       allProducts.filter(p => (p.Brand === brand || p.brand === brand));
         renderProducts(filtered);
-        window.scrollTo(0,0);
     }
 
     function searchPhones() {
         const term = document.getElementById('phoneSearch').value.toLowerCase();
-        renderProducts(allProducts.filter(p => p.Name.toLowerCase().includes(term)));
+        renderProducts(allProducts.filter(p => (p.Name || p.name).toLowerCase().includes(term)));
+    }
+
+    function searchByBudget() {
+        const maxPriceYer = parseFloat(document.getElementById('budgetInput').value);
+        if (!maxPriceYer) renderProducts(allProducts);
+        else renderProducts(allProducts.filter(p => (parseFloat(p.Price || p.price) * 540) <= maxPriceYer));
+        
+        const offcanvasEl = document.getElementById('mobileMenu');
+        const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl) || new bootstrap.Offcanvas(offcanvasEl);
+        offcanvas.hide();
+        window.scrollTo(0,0);
     }
 
     function showDetails(id) {
-        const p = allProducts.find(x => x.ID == id);
+        const p = allProducts.find(x => (x.ID == id || x.id == id));
         if(!p) return;
+        
+        const yemenPrice = (parseFloat(p.Price || p.price) * 540).toLocaleString();
+        
         document.getElementById('modalBody').innerHTML = `
-            <div class="modal-body p-0">
-                <div class="text-center p-4 bg-light position-relative">
-                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
-                    <img src="${p.Image1}" style="max-height: 280px; width: auto;">
-                </div>
-                <div class="p-4">
-                    <h4 class="fw-800 mb-1">${p.Name}</h4>
-                    <p class="text-muted small mb-3">ماركة: ${p.Brand}</p>
-                    <h2 class="text-primary fw-bold mb-4">$${p.Price}</h2>
-                    <div class="row g-2 mb-4 text-center">
-                        <div class="col-4"><div class="bg-light p-2 rounded"><i class="fas fa-microchip d-block text-primary mb-1"></i><small>${p.Processor}</small></div></div>
-                        <div class="col-4"><div class="bg-light p-2 rounded"><i class="fas fa-hdd d-block text-primary mb-1"></i><small>${p.Storage}</small></div></div>
-                        <div class="col-4"><div class="bg-light p-2 rounded"><i class="fas fa-camera d-block text-primary mb-1"></i><small>${p.Camera}</small></div></div>
+            <div class="modal-body p-4">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" style="z-index: 10;"></button>
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-5 text-center">
+                        <img src="${p.Image1 || p.img1}" class="img-fluid rounded mb-3" style="max-height: 280px; object-fit: contain;">
+                        <h4 class="fw-bold text-dark">${p.Name || p.name}</h4>
+                        <div class="d-flex justify-content-center align-items-center gap-3 mt-3 mb-3">
+                            <h2 class="text-primary fw-bold mb-0" dir="ltr">$${p.Price || p.price}</h2>
+                            <span class="badge bg-success fs-6 px-3 py-2">${yemenPrice} ريال</span>
+                        </div>
                     </div>
-                    <div class="d-grid">
-                        <a href="https://wa.me/967770418837?text=أريد طلب: ${p.Name}" class="btn btn-success btn-lg rounded-pill fw-bold">
-                            <i class="fab fa-whatsapp me-2"></i> اطلب الآن
-                        </a>
+                    <div class="col-md-7">
+                        <div class="specs-container mb-4">
+                            <div class="spec-row"><div class="spec-icon"><i class="fas fa-microchip"></i></div><div class="spec-text">المعالج: ${p.Processor || p.cpu || 'غير متوفر'}</div></div>
+                            <div class="spec-row"><div class="spec-icon"><i class="fas fa-memory"></i></div><div class="spec-text">التخزين / الرام: ${p.Storage || p.storage || 'غير متوفر'}</div></div>
+                            <div class="spec-row"><div class="spec-icon"><i class="fas fa-camera"></i></div><div class="spec-text">الكاميرا: ${p.Camera || p.cam || 'غير متوفر'}</div></div>
+                            <div class="spec-row"><div class="spec-icon"><i class="fas fa-battery-full"></i></div><div class="spec-text">البطارية: ${p.Battery || p.battery || 'غير متوفر'}</div></div>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <a href="https://wa.me/967770418837?text=مرحباً، أود طلب الجوال التالي:%0A${encodeURIComponent(p.Name || p.name)}%0Aالسعر: $${p.Price || p.price}" class="btn btn-success btn-lg rounded-pill fw-bold">
+                                <i class="fab fa-whatsapp me-2 text-white"></i> اطلب الآن عبر واتساب
+                            </a>
+                            <div class="d-flex gap-2">
+                                <button onclick="shareProduct('${p.ID || p.id}')" class="btn btn-outline-primary flex-grow-1 rounded-pill fw-bold"><i class="fas fa-share-alt me-1"></i> مشاركة</button>
+                                <button onclick="copyToClipboard('${p.ID || p.id}')" class="btn btn-outline-secondary flex-grow-1 rounded-pill fw-bold"><i class="fas fa-copy me-1"></i> نسخ الرابط</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>`;
-        new bootstrap.Modal(document.getElementById('detailModal')).show();
-    }
-
-    function shareProduct(id) {
-        const p = allProducts.find(x => x.ID == id);
-        // توليد رابط احترافي بناءً على رابط الموقع الحالي
-        const baseUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-        const shortLink = `${baseUrl}?id=${id}`; 
         
-        const text = `📱 *${p.Name}*\n💰 السعر: $${p.Price}\n🔗 التفاصيل: ${shortLink}`;
-        
-        if (navigator.share) {
-            navigator.share({ title: p.Name, text: text, url: shortLink });
-        } else {
-            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+        detailModalInstance.show();
+        const url = new URL(window.location);
+        if (url.searchParams.get('id') !== id.toString()) {
+            url.searchParams.set('id', id);
+            window.history.pushState({ modalOpen: true }, '', url);
         }
     }
 
-    function checkDeepLink() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-        if (productId) {
-            setTimeout(() => showDetails(productId), 500);
-        }
+    async function getShortUrl(longUrl) {
+        if(longUrl.includes('file://')) return longUrl; 
+        try {
+            const res = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`);
+            return res.ok ? await res.text() : longUrl;
+        } catch { return longUrl; }
     }
 
-    document.addEventListener('DOMContentLoaded', loadData);
+    async function shareProduct(id) {
+        const p = allProducts.find(x => (x.ID == id || x.id == id));
+        const yemenPrice = (parseFloat(p.Price || p.price) * 540).toLocaleString();
+        const url = window.location.origin + window.location.pathname + `?id=${id}`;
+        const shortUrl = await getShortUrl(url);
+        const text = `📱 *${p.Name || p.name}*\n💰 السعر: $${p.Price || p.price} (${yemenPrice} ريال)\n🔗 الرابط: ${shortUrl}`;
+        if (navigator.share) navigator.share({ title: p.Name || p.name, text: text, url: shortUrl }).catch(console.error);
+        else window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+    }
+
+    async function copyToClipboard(id) {
+        const url = window.location.origin + window.location.pathname + `?id=${id}`;
+        const shortUrl = await getShortUrl(url);
+        navigator.clipboard.writeText(shortUrl).then(() => alert("✅ تم نسخ الرابط المختصر بنجاح!"));
+    }
 </script>
 </body>
 </html>
